@@ -1,25 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:background="#673AB7">
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="22dp"
-        android:gravity="center_horizontal"
-        android:paddingTop="40dp"
-        android:text="Pc to Phone text copier"
-        android:textColor="#ffffff"
-        android:textSize="26sp"
-        android:textStyle="bold" />
+    android:gravity="center">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -45,7 +28,6 @@
                 android:orientation="vertical"
                 android:paddingTop="30dp">
 
-
                 <Button
                     android:id="@+id/btn_camvw"
                     android:layout_width="fill_parent"
@@ -57,16 +39,10 @@
                     android:textColor="#fff"
                     android:textSize="18sp" />
 
-                <com.skyhope.showmoretextview.ShowMoreTextView
-                    android:id="@+id/text_view_show_more"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/lorem"/>
-
             </LinearLayout>
 
         </RelativeLayout>
 
     </ScrollView>
 
-</RelativeLayout>
+</LinearLayout>

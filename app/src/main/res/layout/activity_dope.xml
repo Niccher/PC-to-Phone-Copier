@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.gauravk.bubblenavigation.BubbleNavigationConstraintView
+        android:id="@+id/bub_navigation_view_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/rounded_rect_white"
+        android:elevation="8dp"
+        android:padding="12dp"
+        app:bnc_mode="packed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/c_item_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="#787"
+            app:bt_colorInactive="#487"
+            app:bt_icon="@drawable/ic_home"
+            app:bt_shape="@drawable/transition_background_drawable_person"
+            app:bt_title="Home"
+            app:bt_padding="16dp"
+            app:bt_titlePadding="16dp" />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/c_item_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="#787"
+            app:bt_colorInactive="#487"
+            app:bt_icon="@drawable/ic_qr"
+            app:bt_shape="@drawable/transition_background_drawable_person"
+            app:bt_title="QR"
+            app:bt_padding="16dp"
+            app:bt_titlePadding="16dp" />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/c_item_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="#787"
+            app:bt_colorInactive="#487"
+            app:bt_icon="@drawable/ic_photos"
+            app:bt_shape="@drawable/transition_background_drawable_person"
+            app:bt_title="Image"
+            app:bt_padding="16dp"
+            app:bt_titlePadding="16dp" />
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/c_item_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="#787"
+            app:bt_colorInactive="#487"
+            app:bt_icon="@drawable/ic_playlist"
+            app:bt_shape="@drawable/transition_background_drawable_person"
+            app:bt_title="History"
+            app:bt_padding="16dp"
+            app:bt_titlePadding="16dp" />
+
+    </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/bub_navigation_view_linear"/>
+
+</RelativeLayout>

@@ -5,14 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e43c58">
+    android:background="@color/colorPrimary">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:background="#19191a" />
 
     <ProgressBar
         android:id="@+id/progressBar"

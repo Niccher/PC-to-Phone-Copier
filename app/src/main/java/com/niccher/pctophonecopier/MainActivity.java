@@ -10,6 +10,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.os.Build;
@@ -22,12 +23,14 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.skyhope.showmoretextview.ShowMoreTextView;
 
 public class MainActivity extends AppCompatActivity {
 
     Button lg,camvw;
     AlertDialog.Builder builder;
     EditText bas;
+    ShowMoreTextView text_more_less;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         camvw= (Button) findViewById(R.id.btn_camvw);
-        bas=findViewById(R.id.pasted);
+        //bas=findViewById(R.id.pasted);
+
+        text_more_less = findViewById(R.id.text_view_show_more);
+        text_more_less.setShowingLine(2);
+
+        text_more_less.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                text_more_less.addShowMoreText("Continue");
+                text_more_less.addShowLessText("Less");
+                text_more_less.setShowMoreColor(Color.RED); // or other color
+                text_more_less.setShowLessTextColor(Color.RED); // or other color
+            }
+        });
+
 
         final Activity activity = this;
 
@@ -45,19 +62,18 @@ public class MainActivity extends AppCompatActivity {
 
                 IntentIntegrator integrator = new IntentIntegrator(activity);
                 integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-                integrator.setPrompt("Scanning for text to copy");
+                integrator.setPrompt("Scan text to copy");
+                integrator.setOrientationLocked(false);
                 integrator.setCameraId(0);
                 integrator.setBeepEnabled(true);
-                integrator.setBarcodeImageEnabled(false);
+                //integrator.setBarcodeImageEnabled(false);
                 integrator.initiateScan();
 
                 CameraManager camma= (CameraManager) getSystemService(Context.CAMERA_SERVICE);
                 String camid=null;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     try {
-                        //camid=camma.getCameraIdList(0);
                         camid=camma.getCameraIdList()[0];
-                        //camma.setTorchMode(camid,true);
                     }catch (CameraAccessException ex){
                         Toast.makeText(activity, "Error--> "+ex.getMessage(), Toast.LENGTH_LONG).show();
                     }
