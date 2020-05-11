@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="#673AB7">
+    android:background="#CCC0DF">
 
     <TextView
         android:id="@+id/title"
@@ -33,7 +33,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="10dp"
-            android:background="#7850C4"
+            android:background="#E1B9F1"
             android:elevation="4dp"
             android:orientation="vertical"
             android:padding="20dp">

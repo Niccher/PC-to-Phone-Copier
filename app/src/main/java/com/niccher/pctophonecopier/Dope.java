@@ -12,8 +12,6 @@ import com.gauravk.bubblenavigation.BubbleNavigationConstraintView;
 import com.gauravk.bubblenavigation.listener.BubbleNavigationChangeListener;
 import com.niccher.pctophonecopier.fragments.Fragment_History;
 import com.niccher.pctophonecopier.fragments.Fragment_Home;
-import com.niccher.pctophonecopier.fragments.Fragment_Image;
-import com.niccher.pctophonecopier.fragments.Fragment_QR;
 
 public class Dope extends AppCompatActivity {
 
@@ -28,12 +26,6 @@ public class Dope extends AppCompatActivity {
 
         bubbleNavigationLinearView = findViewById(R.id.bub_navigation_view_linear);
 
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
         bubbleNavigationLinearView.setNavigationChangeListener(new BubbleNavigationChangeListener() {
             @Override
             public void onNavigationChanged(View view, int position) {
@@ -44,13 +36,13 @@ public class Dope extends AppCompatActivity {
                     case 0:
                         selectedFragm = new Fragment_Home();
                         break;
-                    case 1:
+                    /*case 1:
                         selectedFragm = new Fragment_QR();
                         break;
                     case 2:
                         selectedFragm = new Fragment_Image();
-                        break;
-                    case 3:
+                        break;*/
+                    case 1:
                         selectedFragm = new Fragment_History();
                         break;
                     default:
@@ -58,15 +50,19 @@ public class Dope extends AppCompatActivity {
                 }
 
                 goToSelectedFragment(selectedFragm);
-
-
             }
         });
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
 
         goToSelectedFragment(new Fragment_Home());
     }
 
-    private void goToSelectedFragment(Fragment selectedFragm) {
+    public void goToSelectedFragment(Fragment selectedFragm) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame, selectedFragm);
         transaction.disallowAddToBackStack();
